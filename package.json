@@ -2,9 +2,7 @@
   "name": "learnract",
   "version": "0.1.0",
   "private": true,
-  "homepage":"https://Mnouali.github.io/reactapp-git commit -m 'first commit'
-  -git commit -m 'first commit'
-  ",
+  "homepage":"https://Mnouali.github.io/reactapp",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
