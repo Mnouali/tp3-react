@@ -4,7 +4,9 @@ import Item from './item'
 export default function Form() {
   
   
-  const [data,setData]=useState([])
+  const [data,setData]=useState([
+  
+  ])
   const [val,setVal]=useState("")
   const changeVal=(e)=>{
    setVal(e)
@@ -22,10 +24,12 @@ export default function Form() {
      }
    }
     const Delete=(index)=>{
+ 
         data.splice(index,1)
         const newTable=[...data]
         setData(newTable)
     }
+    console.log(data)
   return (
 
     
@@ -38,9 +42,9 @@ export default function Form() {
 
       </div>
       <br/><br/><br/>
-      {data.map((element)=>{
+      {data.map((element,index)=>{
         return(
-         <Item key={element.id} el={element} func={Delete}/>
+           <Item key={element.id} fun={Delete} el={element} index={index}/>
         )
       })}
       
