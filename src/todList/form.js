@@ -18,9 +18,11 @@ export default function Form() {
      }
      else{
       const newData=[...data]
-      newData.push({txt:`${val}`,id:`${uuidv4()}`})
+      newData.push({txt:`${val}`,id:`${uuidv4()}`,completed:false})
       setData(newData)
-      setVal("")
+       setVal("")
+     
+    
      }
    }
     const Delete=(index)=>{
@@ -29,7 +31,14 @@ export default function Form() {
         const newTable=[...data]
         setData(newTable)
     }
-    console.log(data)
+     const funcStyle=(id)=>{
+        data[id].completed=!data[id].completed
+        const newTbale=[...data]
+        setData(newTbale)
+        
+       
+       
+     }
   return (
 
     
@@ -44,7 +53,7 @@ export default function Form() {
       <br/><br/><br/>
       {data.map((element,index)=>{
         return(
-           <Item key={element.id} fun={Delete} el={element} index={index}/>
+           <Item key={element.id} functionStyle={()=>funcStyle(index)} txt={element.txt} completed={element.completed} fun={()=>Delete(index)}   />
         )
       })}
       
